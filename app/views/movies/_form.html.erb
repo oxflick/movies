@@ -1,0 +1,45 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :year %><br>
+    <%= f.text_field :year, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :actor %><br>
+    <%= f.text_field :actor, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :raiting %><br>
+    <%= f.text_field :raiting, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre, class: "form-control"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

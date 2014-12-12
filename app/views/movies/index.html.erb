@@ -1,0 +1,37 @@
+<h1>Listing movies</h1>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Actor</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th>Raiting</th>
+      <th>Genre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.year %></td>
+        <td><%= movie.actor %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.picture %></td>
+        <td><%= movie.raiting %></td>
+        <td><%= movie.genre %></td>
+        <td><%= link_to 'Show', movie, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path, class: "btn btn-link" %>
