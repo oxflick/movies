@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 #Gem for user friendly url with a slug
-gem 'friendly_id', '~> 5.0.0'
+
 
 #Gem for heroku
 gem 'rails_12factor', group: :production
