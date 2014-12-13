@@ -1,7 +1,14 @@
 class Movie < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :title, use: :slugged
-
+  
+  before_save :create_permalink
   mount_uploader :picture, PictureUploader
   
+  private
+  def create_permalink
+     self.permalink = title.downcase
+  end
+  
+  def to_param
+     permalink
+  end   
 end

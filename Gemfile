@@ -46,4 +46,5 @@ gem 'pg', group: :production
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro', '~> 0.7'
+gem 'rb-readline', '~> 0.4.2'
 
