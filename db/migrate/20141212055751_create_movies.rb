@@ -8,7 +8,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :picture
       t.string :raiting
       t.string :genre
-      t.string :slug
+      
       
       t.timestamps
     end

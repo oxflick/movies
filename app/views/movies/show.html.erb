@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="img-thumbnail">
+        <%= image_tag(@movie.picture_url, :width => "214") if @movie.picture.present? %>
+ </div>
+
+
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
@@ -18,11 +23,6 @@
 <p>
   <strong>Description:</strong>
   <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @movie.picture %>
 </p>
 
 <p>
