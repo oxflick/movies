@@ -1,0 +1,50 @@
+.jumbotron {
+background-color: #FFFCEB;
+border: 2px solid #E8D5A7;
+h2 {
+color: #504357;
+font-weight: bold;
+}
+h3{
+color: #962C5F;
+}
+}
+
+/*-- Here is another option for the logo.
+.navbar-default {
+.container-fluid {
+background-color: #504357;
+.navbar-nav > li > a {
+color: #ffffff;
+font-size: 16px;
+font-weight: bold;
+}
+.navbar-brand {
+color: #FC1B04;
+font-size: 32px;
+font-weight: bold;
+font-family: 'Shadows Into Light', cursive;
+text-shadow: 2px 0 0 #FFFCEB, -2px 0 0 #FFFCEB, 0 2px 0 #FFFCEB, 0 -2px 0 #FFFCEB, 1px 1px #FFFCEB, -1px -1px 0 #FFFCEB, 1px -1px 0 #FFFCEB, -1px 1px 0 #ED7621;
+
+}
+}
+} --*/
+
+.navbar-default {
+.container-fluid {
+background-color: #F0F0ED;
+.navbar-nav > li > a {
+color: #504357;
+font-size: 16px;
+font-weight: bold;
+}
+}
+}
+
+.container-fluid {
+padding: 10px 120px;
+}
+.logohead {
+width: 180px;
+margin-top: -20px;
+}
