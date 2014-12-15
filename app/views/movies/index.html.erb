@@ -3,16 +3,13 @@
 <h3> Explore your favorite or currently showing in theater movies. <br>
 Leave reviews, ratings for your fellow movie lover! And VOTE for similar movies. </h3>
 </div>
-
+<div class="table-responsive">
 <table class="table table-hover table-condensed">
   <thead>
     <tr>
       <th>Title</th>
       <th>Year</th>
       <th>Actor</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th>Raiting</th>
       <th>Genre</th>
       <th colspan="3"></th>
     </tr>
@@ -24,9 +21,6 @@ Leave reviews, ratings for your fellow movie lover! And VOTE for similar movies.
         <td><%= movie.title %></td>
         <td><%= movie.year %></td>
         <td><%= movie.actor %></td>
-        <td><%= movie.description %></td>
-        <td><%= movie.picture %></td>
-        <td><%= movie.raiting %></td>
         <td><%= movie.genre %></td>
         <td><%= link_to 'Show', movie, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-link" %></td>
@@ -35,7 +29,7 @@ Leave reviews, ratings for your fellow movie lover! And VOTE for similar movies.
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Movie', new_movie_path, class: "btn btn-link" %>
