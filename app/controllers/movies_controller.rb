@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
   # GET /movies/1.json
   def show
   @movie = Movie.find_by_permalink(params[:id])
+  @reviews = Review.where(movie_id: @movie.id)
   end
 
   # GET /movies/new
