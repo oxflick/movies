@@ -34,5 +34,7 @@
   <%= @movie.genre %>
 </p>
 
+<%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-link" %> |
 <%= link_to 'Back', movies_path, class: "btn btn-link" %>

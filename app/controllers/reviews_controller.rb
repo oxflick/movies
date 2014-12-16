@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @review.movie_id = @movie.id
     
     flash[:notice] = "Review was successfully created." if @review.save
-    respond_with(@review, :location => root_path)
+    respond_with(@review, :location => movie_path(@movie))
 
   end
 
