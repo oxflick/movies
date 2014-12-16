@@ -14,5 +14,5 @@ class Movie < ActiveRecord::Base
      self.permalink = title.downcase
   end
   
-    
+  has_many :reviews  
 end
