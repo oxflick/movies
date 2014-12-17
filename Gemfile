@@ -49,5 +49,5 @@ gem 'figaro', '~> 0.7'
 gem 'rb-readline', '~> 0.4.2'
 gem 'mini_magick'
 gem 'devise'
-
+gem 'searchkick'
 
