@@ -6,10 +6,10 @@
       <%= image_tag(@movie.picture_url) if @movie.picture.present? %>
     </div>
 
-    <%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-link" %> |
-    <%= link_to 'Back', movies_path, class: "btn btn-link" %>
+   
     
   </div>
+  
   <div class="col-md-9">
     <p>
       <strong>Title:</strong>
@@ -49,6 +49,8 @@
     <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
 
     <br>
+    <%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-link" %> |
+    <%= link_to 'Back', movies_path, class: "btn btn-link" %>
     <br>
 
 
