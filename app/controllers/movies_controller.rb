@@ -11,7 +11,12 @@ class MoviesController < ApplicationController
   # GET /movies/1.json
   def show
   @movie = Movie.find_by_permalink(params[:id])
-  @reviews = Review.where(movie_id: @movie.id)
+  @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+   if @reviews.blank?
+    @avg_rating = 0
+   else  
+  @avg_rating = @reviews.average(:rating).round(2)
+   end
   end
 
   # GET /movies/new
