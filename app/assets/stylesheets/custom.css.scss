@@ -64,7 +64,7 @@ padding: 10px 120px;
 }
 
 .logohead {
-width: 180px;
+width: 160px;
 margin-top: -20px;
 }
 
@@ -132,6 +132,10 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
-
+@media only screen and (max-device-width: 767px) {
+	.logohead {
+width: 140px;
+}
+}
 
 
