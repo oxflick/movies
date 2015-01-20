@@ -150,12 +150,27 @@ overflow: hidden;
 }
 }
 
+@media only screen and (max-device-width: 360px) {
+	.thumbnail > img {
+    max-height: 200px;
+    min-height: 199px;
+}
+.caption {
+h4 {
+font-size: 12px;
+height: 60px;
+overflow: hidden;
+
+}
+}
+}
+
 
 @media only screen and (max-device-width: 767px) {
 	.logohead {
 width: 140px;
 margin-left: -110px;
-margin-top: -15px;
+margin-top: -10px;
 }
 }
 
