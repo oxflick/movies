@@ -132,10 +132,29 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
+@media only screen and (max-device-width: 320px) {
+	.caption {
+h4 {
+font-size: 12px;
+height: 60px;
+overflow: hidden;
+
+}
+}
+.thumbnail > img {
+    min-height: 175px;
+    max-height: 176px;
+}
+.navbar-toggle {
+	margin-right: 1px;
+}
+}
+
+
 @media only screen and (max-device-width: 767px) {
 	.logohead {
-width: 150px;
-margin-left: -100px;
+width: 140px;
+margin-left: -110px;
 margin-top: -15px;
 }
 }
