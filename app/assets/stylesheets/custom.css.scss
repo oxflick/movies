@@ -133,7 +133,7 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (min-device-width: 768px) {
 	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
 	h2 {
 color: #401739;
@@ -146,3 +146,34 @@ font-weight: bold;
 	}
 }
 
+
+
+
+
+@media only screen and (max-device-width: 767px) {
+	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
+	h2 {
+color: #401739;
+}
+     p {
+color: #D14617;
+font-size: 15px;
+font-weight: bold;
+}
+	}
+}
+
+@media only screen and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
+	h2 {
+color: #401739;
+}
+     p {
+color: #D14617;
+font-size: 15px;
+font-weight: bold;
+}
+	}
+}
