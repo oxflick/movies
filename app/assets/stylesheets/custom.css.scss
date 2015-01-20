@@ -146,15 +146,3 @@ font-weight: bold;
 	}
 }
 
-@media only screen and (orientation: landscape) {
-	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
-	h2 {
-color: #401739;
-}
-     p {
-color: #D14617;
-font-size: 15px;
-font-weight: bold;
-}
-	}
-}
