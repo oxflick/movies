@@ -135,6 +135,10 @@ footer .footer-links a:hover {
 
 @media only screen and (max-device-width: 720px) {
 	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
-
+     p {
+color: #F8EEEE;
+font-size: 16px;
+font-weight: bold;
+}
 	}
 }
