@@ -12,18 +12,18 @@ margin: 0 0 180px;
 
 
 .jumbotron {
-background-image: url('https://s3.amazonaws.com/funkyflick1/try11.jpg');
+background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
 
 background-color: #000;
 border: 1px solid #999999;
 text-align: center;
 h2 {
-color: #FFF;
+color: #401739;
 font-weight: bold;
 margin-top: -10px;
 }
 p {
-color: #962C5F;
+color: #D14617;
 font-size: 14px;
 font-weight: bold;
 }
@@ -133,46 +133,6 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
-@media only screen and (min-device-width: 768px) {
-	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
-	h2 {
-color: #401739;
-}
-     p {
-color: #D14617;
-font-size: 15px;
-font-weight: bold;
-}
-	}
-}
 
 
 
-
-
-@media only screen and (max-device-width: 767px) {
-	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
-	h2 {
-color: #401739;
-}
-     p {
-color: #D14617;
-font-size: 15px;
-font-weight: bold;
-}
-	}
-}
-
-@media only screen and (min-device-width: 768px)
-and (max-device-width: 992px) {
-	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
-	h2 {
-color: #401739;
-}
-     p {
-color: #D14617;
-font-size: 15px;
-font-weight: bold;
-}
-	}
-}
