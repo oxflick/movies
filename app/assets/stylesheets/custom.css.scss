@@ -146,7 +146,7 @@ font-weight: bold;
 	}
 }
 
-@media only all and (orientation: portrait) {
+@media only all and (orientation: landscape) {
 	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
 	h2 {
 color: #401739;
