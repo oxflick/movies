@@ -12,12 +12,15 @@ margin: 0 0 180px;
 
 
 .jumbotron {
-background-image: url('https://s3.amazonaws.com/funkyflick1/header.jpg');
-background-color: #FFFFFF;
+background-image: url('https://s3.amazonaws.com/funkyflick1/try11.jpg');
+
+background-color: #000;
 border: 1px solid #999999;
+text-align: center;
 h2 {
-color: #504357;
+color: #FFF;
 font-weight: bold;
+margin-top: -10px;
 }
 p {
 color: #962C5F;
@@ -91,7 +94,7 @@ overflow: hidden;
 }
 
 footer {
-	background-color: #504357;
+	background-color: #401739;
 	min-height: 180px;
 	position: absolute;
 	left: 0;
