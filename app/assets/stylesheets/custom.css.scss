@@ -133,40 +133,8 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
-@media only screen and (min-device-width: 768px) {
-.jumbotron {
-background-color: #000;
-border: 1px solid #999999;
-text-align: center;
-h2 {
-color: #FFF;
-font-weight: bold;
-margin-top: -10px;
-}
-p {
-color: #962C5F;
-font-size: 14px;
-font-weight: bold;
-}
-}	
+@media only screen and (max-device-width: 720px) {
+	.jumbotron { background-image: url('https://s3.amazonaws.com/funkyflick1/panelmobile.jpg');
 
-}
-
-@media only screen and (min-device-width: 480px) {
-.jumbotron {
-background-color: #000;
-border: 1px solid #999999;
-text-align: center;
-h2 {
-color: #FFF;
-font-weight: bold;
-margin-top: -10px;
-}
-p {
-color: #962C5F;
-font-size: 14px;
-font-weight: bold;
-}
-}	
-
+	}
 }
