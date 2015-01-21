@@ -164,6 +164,22 @@ overflow: hidden;
 }
 }
 }
+@media only screen and (max-device-width: 480px) {
+	.thumbnail > img {
+    min-height: 209px;
+    max-height: 210px;  
+}
+.caption {
+h4 {
+font-size: 12px;
+height: 60px;
+overflow: hidden;
+
+}
+}
+
+}
+
 
 
 @media only screen and (max-device-width: 767px) {
