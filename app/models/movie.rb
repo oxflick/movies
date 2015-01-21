@@ -13,7 +13,7 @@ class Movie < ActiveRecord::Base
   
   private
   def create_permalink
-     self.permalink = title.downcase
+     self.permalink = title.downcase.parameterize.underscore
   end
   
   has_many :reviews  
