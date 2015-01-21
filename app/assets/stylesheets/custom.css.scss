@@ -132,43 +132,10 @@ footer .footer-links a:hover {
 	margin-top: 25px;
 }
 
-@media only screen and (max-device-width: 320px) {
-	.caption {
-h4 {
-font-size: 12px;
-height: 60px;
-overflow: hidden;
 
-}
-}
-.thumbnail > img {
-    min-height: 175px;
-    max-height: 176px;
-}
-.navbar-toggle {
-	margin-right: 1px;
-}
-}
 
-@media only screen and (max-device-width: 360px) {
-	.thumbnail > img {
-    max-height: 200px;
-    min-height: 199px;
-}
-.caption {
-h4 {
-font-size: 12px;
-height: 60px;
-overflow: hidden;
-
-}
-}
-}
 @media only screen and (max-device-width: 480px) {
-	.thumbnail > img {
-    min-height: 209px;
-    max-height: 210px;  
-}
+	
 .caption {
 h4 {
 font-size: 12px;
@@ -187,6 +154,13 @@ overflow: hidden;
 width: 140px;
 margin-left: -110px;
 margin-top: -10px;
+}
+.thumbnail > img {
+    min-height: 200px;
+    max-height: 201px;  
+}
+.navbar-toggle {
+margin-right: 1px;
 }
 }
 
