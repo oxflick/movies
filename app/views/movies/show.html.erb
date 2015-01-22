@@ -99,7 +99,7 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-    <%= link_to "Add a Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
+    <%= link_to "Add Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
   </div>
 
 
@@ -112,9 +112,18 @@
 
   <div class="col-md-9">   
 
-    <h4> <%= similarity.name %> </h4>
-    <p> <strong> <%= similarity.actor %> </strong> </p>
-    <p> <%= similarity.why %> </p>
+    <h4> 
+    
+    <%= similarity.name %>
+    </h4>
+    <p>
+    <strong>Star:</strong> 
+    <%= similarity.actor %> 
+    </p>
+    <p> 
+    <strong>Why is it similar?</strong> 
+    <%= similarity.why %>
+    </p>
   </div>
   </div>
   <% end %>
