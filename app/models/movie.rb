@@ -17,4 +17,5 @@ class Movie < ActiveRecord::Base
   end
   
   has_many :reviews  
+  has_many :similarities
 end

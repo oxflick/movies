@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-  resources :similarities
+  
 
   devise_for :users
   resources :movies do
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
      get 'search'
     end 
     resources :reviews, except: [:show, :index]
+    resources :similarities, except: [:show, :index]
   end  
 
   get 'pages/about'

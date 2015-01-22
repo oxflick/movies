@@ -1,16 +1,11 @@
 class SimilaritiesController < ApplicationController
-  before_action :set_similarity, only: [:show, :edit, :update, :destroy]
+  before_action :set_similarity, only: [:edit, :update, :destroy]
+  before_action :set_movie
+  before_action :authenticate_user!
+  before_action :check_user, only: [:edit, :update, :destroy]
   respond_to :html
 
-  def index
-    @similarities = Similarity.all
-    respond_with(@similarities)
-  end
-
-  def show
-    respond_with(@similarity)
-  end
-
+ 
   def new
     @similarity = Similarity.new
     respond_with(@similarity)
@@ -22,9 +17,10 @@ class SimilaritiesController < ApplicationController
   def create
     @similarity = Similarity.new(similarity_params)
     @similarity.user_id = current_user.id
+    @similarity.movie_id = @movie.id
 
     flash[:notice] = "Similar movie was successfully created." if @similarity.save
-    respond_with(@similarity, :location => similarity_path(@similarity))
+    respond_with(@similarity, :location => movie_path(@movie))
   end
 
 
@@ -51,6 +47,10 @@ class SimilaritiesController < ApplicationController
     def set_similarity
       @similarity = Similarity.find(params[:id])
     end
+
+    def set_movie
+      @movie = Movie.find_by_permalink(params[:movie_id])
+    end 
 
     def similarity_params
       params.require(:similarity).permit(:image, :name, :actor, :why)
