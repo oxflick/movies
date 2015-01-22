@@ -21,21 +21,14 @@ class SimilaritiesController < ApplicationController
 
   def create
     @similarity = Similarity.new(similarity_params)
-   
+    @similarity.user_id = current_user.id
 
-    respond_to do |format|
-      if @similarity.save
-        format.html { redirect_to @similarity, notice: 'Similar movie was successfully created.' }
-        format.json { render :show, status: :created, location: @similarity }
-      else
-        format.html { render :new }
-        format.json { render json: @similarity.errors, status: :unprocessable_entity }
-      end
-    end
-
-
-
+    flash[:notice] = "Similar movie was successfully created." if @similarity.save
+    respond_with(@similarity, :location => similarity_path(@similarity))
   end
+
+
+
 
   def update
     respond_to do |format|
