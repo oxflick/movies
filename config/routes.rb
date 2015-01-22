@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  resources :similarities
+
   devise_for :users
   resources :movies do
    collection do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217034306) do
+ActiveRecord::Schema.define(version: 20150121210748) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 20141217034306) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "movie_id"
+  end
+
+  create_table "similarities", force: true do |t|
+    t.string   "image"
+    t.string   "name"
+    t.string   "actor"
+    t.string   "why"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
