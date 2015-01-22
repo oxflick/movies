@@ -28,6 +28,7 @@ class MoviesController < ApplicationController
    else  
   @avg_rating = @reviews.average(:rating).round(2)
    end
+   @similarities = Similarity.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   # GET /movies/new

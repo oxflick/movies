@@ -6,7 +6,7 @@
       <%= image_tag(@movie.picture_url) if @movie.picture.present? %>
     </div>
 
-   
+
     
   </div>
   
@@ -61,44 +61,67 @@
     <h3> No reviews yet. Be the first one to write one! </h3>
     <% else %>
     <table class="table">
-    <thead>
-    <tr>
-     <th class="col-md-3"> </th>
-     <th class="col-md-9"> </th>
-     </tr>
+      <thead>
+        <tr>
+         <th class="col-md-3"> </th>
+         <th class="col-md-9"> </th>
+       </tr>
      </thead>
 
-      <tbody>
-        <% @reviews.each do |review| %>
-        <tr>
-         <td> 
-          <h4>
+     <tbody>
+      <% @reviews.each do |review| %>
+      <tr>
+       <td> 
+        <h4>
           <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
-          </h4>
-          <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
-          </td>
-          <td>
-            <div class="star-rating" data-score= <%= review.rating %> ></div>
-            <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-           
-            <% if user_signed_in? %>
-             <% if (review.user == current_user) || (current_user.admin?) %>
-               <%= link_to "Edit", edit_movie_review_path(@movie, review) %> |
-               <%= link_to "Delete", movie_review_path(@movie, review), method: :delete %>
-             <% end %>  
-            <% end %>
+        </h4>
+        <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
+      </td>
+      <td>
+        <div class="star-rating" data-score= <%= review.rating %> ></div>
+        <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
 
-          </td>
-        </tr>
+        <% if user_signed_in? %>
+        <% if (review.user == current_user) || (current_user.admin?) %>
+        <%= link_to "Edit", edit_movie_review_path(@movie, review) %> |
+        <%= link_to "Delete", movie_review_path(@movie, review), method: :delete %>
+        <% end %>  
         <% end %>
-      </tbody>
-    </table>
+
+      </td>
+    </tr>
     <% end %>
+  </tbody>
+</table>
+<% end %>
+</div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Add a Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
   </div>
 
-<%= link_to "Add a Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-primary" %>
+
+
+  <% @similarities.each do |similarity| %>
+  <div class="row space">
+  <div class="col-md-3">
+    <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
+  </div>
+
+  <div class="col-md-9">   
+
+    <h4> <%= similarity.name %> </h4>
+    <p> <strong> <%= similarity.actor %> </strong> </p>
+    <p> <%= similarity.why %> </p>
+  </div>
+  </div>
+  <% end %>
 
 </div>
+</div>
+
 
 
 
