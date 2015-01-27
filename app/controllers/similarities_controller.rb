@@ -27,20 +27,17 @@ class SimilaritiesController < ApplicationController
 
 
   def update
-    respond_to do |format|
-      if @similarity.update(similarity_params)
-        format.html { redirect_to @similarity, notice: 'Similar movie was successfully updated.' }
-        format.json { render :show, status: :ok, location: @similarity }
-      else
-        format.html { render :edit }
-        format.json { render json: @similarity.errors, status: :unprocessable_entity }
-      end
-    end
+    @similarity.update(similarity_params)
+        
+    flash[:notice] = "Similarity was successfully updated." if @similarity.save
+    respond_with(@similarity, :location => movie_path(@movie))
   end
 
   def destroy
     @similarity.destroy
-    respond_with(@similarity)
+
+   flash[:notice] = "Similarity was successfully destroyed." 
+   respond_with(@similarity, :location => @movie)
   end
 
   private
@@ -50,6 +47,12 @@ class SimilaritiesController < ApplicationController
 
     def set_movie
       @movie = Movie.find_by_permalink(params[:movie_id])
+    end 
+
+    def check_user
+      unless (@similarity.user == current_user) || (current_user.admin?)
+        redirect_to root_url, alert: "Sorry, this similarity belongs to someone else"
+      end  
     end 
 
     def similarity_params

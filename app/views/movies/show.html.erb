@@ -123,6 +123,13 @@
     <p> 
     <strong>Why is it similar?</strong> 
     <%= similarity.why %>
+    <% if user_signed_in? %>
+        <% if (similarity.user == current_user) || (current_user.admin?) %>
+        <%= link_to "Edit", edit_movie_similarity_path(@movie, similarity) %> |
+        <%= link_to "Delete", movie_similarity_path(@movie, similarity), method: :delete %>
+        <% end %>  
+        <% end %>
+
     </p>
   </div>
   </div>
