@@ -1,3 +1,5 @@
+
+
 <div class="jumbotron">
   <h2> What's the movie about?</h2>
   <p> Explore your favorite or currently showing in theater movies. <br>
@@ -27,7 +29,8 @@
   </div>
 
   <br>
-
+  <%= will_paginate @movies, renderer: BootstrapPagination::Rails %>
+  <br>
   <% if user_signed_in? && current_user.admin? %>
   <%= link_to 'New Movie', new_movie_path, class: "btn btn-link" %>
   <% end %>

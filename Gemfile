@@ -50,4 +50,5 @@ gem 'rb-readline', '~> 0.4.2'
 gem 'mini_magick'
 gem 'devise'
 gem 'searchkick'
-
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
