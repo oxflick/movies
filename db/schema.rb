@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127202239) do
+ActiveRecord::Schema.define(version: 20150130012411) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150127202239) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
-    t.string   "year"
+    t.date     "year"
     t.string   "actor"
     t.text     "description"
     t.string   "picture"
