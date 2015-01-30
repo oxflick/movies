@@ -49,7 +49,7 @@
     <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
 
     <br>
-    <%= link_to 'Back', movies_path, class: "btn btn-link" %>
+    
     <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-link" %> 
     <% end %>
