@@ -77,6 +77,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Required for Devise gem. Remember to change host to the actual app host
+  Rails.application.routes.default_url_options[:host] = 'funkyflick.herokuapp.com'
 
   config.action_mailer.default_url_options = { :host => 'funkyflick.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
