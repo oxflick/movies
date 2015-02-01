@@ -93,7 +93,7 @@ address: "smtp.gmail.com",
 port: 587,
 domain: 'gmail.com',
 authentication: "plain",
-enable_starttls_auto: true,
+enable_starttls_auto: false,
 user_name: ENV["GMAIL_USERNAME"],
 password: ENV["GMAIL_PASSWORD"],
 :openssl_verify_mode => 'none'
