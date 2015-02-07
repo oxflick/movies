@@ -70,7 +70,7 @@
      </thead>
 
 
-     <% if current_user.admin? %>
+    <% if user_signed_in? && current_user.admin? %>
      <tbody>
       <% @reviews.each do |review| %>
       <tr>
@@ -78,7 +78,7 @@
         <h4>
           <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
         </h4>
-        <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
+            <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
       </td>
       <td>
         <div class="star-rating" data-score= <%= review.rating %> ></div>
@@ -96,11 +96,10 @@
 
       </td>
     </tr>
-    <% end %>
+   
   </tbody>
-  
-  <% else %>
-
+ <% end %>
+ <% else %>
 
   <tbody>
     <% @reviews.where(publish: true).each do |review| %>
@@ -136,12 +135,12 @@
 </div>
 <div class="container">
   <div class="row">
-  <% if current_user.admin? %>
+    <% if user_signed_in? && current_user.admin? %>
     <div class="col-md-12">
       <%= link_to "Add Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
     </div>
-
-   <% end %> 
+    <% end %>
+   
 
     <div class="col-md-12">
     <% if @similarities.blank? %>
