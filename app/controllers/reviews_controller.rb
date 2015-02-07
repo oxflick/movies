@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [ :edit, :update, :destroy]
+  before_action :set_review, only: [ :edit, :update, :destroy, :approve]
   before_action :set_movie
   before_action :authenticate_user!
   before_action :check_user, only: [:edit, :update, :destroy]
@@ -20,14 +20,14 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.movie_id = @movie.id
     
-    flash[:notice] = "Review was successfully created." if @review.save
+    flash[:notice] = "Review was successfully created. It will be published after approval." if @review.save
     respond_with(@review, :location => movie_path(@movie))
 
   end
 
   def update
     @review.update(review_params)
-
+    
     flash[:notice] = "Review was successfully updated." if @review.save
     respond_with(@review, :location => movie_path(@movie))
   end
@@ -39,6 +39,16 @@ class ReviewsController < ApplicationController
    respond_with(@review, :location => @movie)
 
   end
+
+  def approve
+    @review.publish = true
+    @review.save
+
+    flash[:notice] = "Review was successfully approved." 
+    redirect_to movie_path(@movie)
+
+    end  
+
 
   private
     def set_review
@@ -56,6 +66,6 @@ class ReviewsController < ApplicationController
     end 
 
     def review_params
-      params.require(:review).permit(:rating, :comment)
+      params.require(:review).permit(:rating, :comment, :publish)
     end
 end

@@ -1,10 +1,6 @@
 class Review < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :movie
-	
-	scope :pending, where(:publish => false)
-	scope :approved, where(:publish => true)
-
 
 validates :rating, presence: true
 validates :rating, numericality: {
@@ -14,5 +10,5 @@ validates :rating, numericality: {
     message: "can only be a whole number between 1 and 5"
   }
 
- 
+
 end

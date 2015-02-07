@@ -8,9 +8,16 @@ Rails.application.routes.draw do
    collection do
      get 'search'
     end 
-    resources :reviews, except: [:show, :index]
+  resources :reviews, except: [:show, :index] do
+    member do
+    get 'approve'
+    end
+  end
+    
     resources :similarities, except: [:show, :index]
   end  
+  
+
 
   get 'pages/about'
 
@@ -19,6 +26,8 @@ Rails.application.routes.draw do
   get 'pages/privacy'
   
   root 'movies#index'
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
