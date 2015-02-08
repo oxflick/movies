@@ -14,5 +14,7 @@ validates :rating, numericality: {
     message: "can only be a whole number between 1 and 5"
   }
 
- 
+validates :user_id, :uniqueness => { :scope => :movie_id,
+    :message => "can only write one review per movie."
+}
 end
