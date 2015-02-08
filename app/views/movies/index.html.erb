@@ -11,7 +11,9 @@
       <% @movies.each do |movie| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="thumbnail">
-          <%= image_tag movie.picture_url if movie.picture.present? %>
+         
+          <%= link_to (image_tag movie.picture_url), movie %>
+
           <div class="caption">
             <h4><%= link_to movie.title, movie  %></h4>
             <p>
