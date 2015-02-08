@@ -17,4 +17,9 @@ validates :rating, numericality: {
 validates :user_id, :uniqueness => { :scope => :movie_id,
     :message => "can only write one review per movie."
 }
+validates_length_of :comment,
+    :minimum => 80,
+    :maximum => 5000,
+    :allow_blank => true
+
 end
