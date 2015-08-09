@@ -15,7 +15,14 @@ Rails.application.routes.draw do
   end
     
     resources :similarities, except: [:show, :index]
-  end  
+  end 
+
+  resources :links do
+    member do
+      put "like", to: "similarities#upvote"
+      put "dislike", to: "similarities#downvote" 
+    end
+  end    
   
 
 

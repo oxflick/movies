@@ -5,7 +5,20 @@ class SimilaritiesController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
   respond_to :html
 
- 
+  def upvote
+    @similarity = Similarity.find(params[:id])
+    @similarity.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @similarity = Similarity.find(params[:id])
+    @similarity.downvote_by current_user
+    redirect_to :back
+  end
+
+
+
   def new
     @similarity = Similarity.new
     respond_with(@similarity)

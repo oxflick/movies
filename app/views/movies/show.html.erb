@@ -154,11 +154,29 @@
 
     <% @similarities.each do |similarity| %>
     <div class="row space">
-      <div class="col-md-2">
-        <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
+      <div class="col-md-3">
+        <div class="col-md-2">
+          <div class="voting">
+            <p>
+              <%= link_to like_link_path(similarity), method: :put do %>
+               <span class="thumbup"> up </span>
+               <%= similarity.get_upvotes.size %>
+              <% end %>
+            </p>
+            <p>
+              <%= link_to dislike_link_path(similarity), method: :put do %>
+               <span class="thumbdown"> wn </span>
+               <%= similarity.get_downvotes.size %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
+        </div>
       </div>
 
-      <div class="col-md-10">   
+      <div class="col-md-9">   
 
         <h4> 
 
@@ -181,6 +199,10 @@
         </p>
       </div>
     </div>
+
+    
+
+
     <% end %>
 
   </div>
