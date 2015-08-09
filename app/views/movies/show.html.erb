@@ -70,7 +70,7 @@
      </thead>
 
 
-    <% if user_signed_in? && current_user.admin? %>
+     <% if user_signed_in? && current_user.admin? %>
      <tbody>
       <% @reviews.each do |review| %>
       <tr>
@@ -78,7 +78,7 @@
         <h4>
           <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
         </h4>
-            <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
+        <p> <%= review.created_at.strftime("%-m/%-d/%-y") %> </p>
       </td>
       <td>
         <div class="star-rating" data-score= <%= review.rating %> ></div>
@@ -96,10 +96,10 @@
 
       </td>
     </tr>
-   
+    
   </tbody>
- <% end %>
- <% else %>
+  <% end %>
+  <% else %>
 
   <tbody>
     <% @reviews.where(publish: true).each do |review| %>
@@ -140,70 +140,71 @@
       <%= link_to "Add Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
     </div>
     <% end %>
-   
+    
 
     <div class="col-md-12">
-    <% if @similarities.blank? %>
-    <h4 class="text-primary"> No Similar Movies yet. Check later! </h4>
+      <% if @similarities.blank? %>
+      <h4 class="text-primary"> No Similar Movies yet. Check later! </h4>
 
-    <% else %>
-    <h4 class="text-primary"> Similar Movies </h4>
-    <% end %>
-    
+      <% else %>
+      <h4 class="text-primary"> Similar Movies </h4>
+      <% end %>
+      
     </div>
 
-    <% @similarities.each do |similarity| %>
-    <div class="row space">
-      <div class="col-md-3">
-        <div class="col-md-2">
-          <div class="voting">
+    <div class="col-md-12">
+      <% @similarities.each do |similarity| %>
+      <div class="panel panel-default">
+        <div class="row space">
+         
+          <div class="col-md-3">
+            <div class="col-md-2">
+              <div class="voting">
+                <p>
+                  <%= link_to like_link_path(similarity), method: :put do %>
+                  <span class="thumbup"> up </span>
+                  <%= similarity.get_upvotes.size %>
+                  <% end %>
+                </p>
+                <p>
+                  <%= link_to dislike_link_path(similarity), method: :put do %>
+                  <span class="thumbdown"> wn </span>
+                  <%= similarity.get_downvotes.size %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
+            </div>
+          </div>
+
+          <div class="col-md-9">   
+
+            <h4> 
+
+              <%= similarity.name %>
+            </h4>
             <p>
-              <%= link_to like_link_path(similarity), method: :put do %>
-               <span class="thumbup"> up </span>
-               <%= similarity.get_upvotes.size %>
-              <% end %>
+              <strong>Star:</strong> 
+              <%= similarity.actor %> 
             </p>
-            <p>
-              <%= link_to dislike_link_path(similarity), method: :put do %>
-               <span class="thumbdown"> wn </span>
-               <%= similarity.get_downvotes.size %>
+            <p> 
+              <strong>Why is it similar?</strong> 
+              <%= similarity.why %>
+              <% if user_signed_in? %>
+              <% if (similarity.user == current_user) || (current_user.admin?) %>
+              <%= link_to "Edit", edit_movie_similarity_path(@movie, similarity) %> |
+              <%= link_to "Delete", movie_similarity_path(@movie, similarity), method: :delete %>
+              <% end %>  
               <% end %>
+
             </p>
           </div>
         </div>
-        <div class="col-md-10">
-          <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
-        </div>
       </div>
-
-      <div class="col-md-9">   
-
-        <h4> 
-
-          <%= similarity.name %>
-        </h4>
-        <p>
-          <strong>Star:</strong> 
-          <%= similarity.actor %> 
-        </p>
-        <p> 
-          <strong>Why is it similar?</strong> 
-          <%= similarity.why %>
-          <% if user_signed_in? %>
-          <% if (similarity.user == current_user) || (current_user.admin?) %>
-          <%= link_to "Edit", edit_movie_similarity_path(@movie, similarity) %> |
-          <%= link_to "Delete", movie_similarity_path(@movie, similarity), method: :delete %>
-          <% end %>  
-          <% end %>
-
-        </p>
-      </div>
+      <% end %>
     </div>
-
-    
-
-
-    <% end %>
 
   </div>
 </div>
