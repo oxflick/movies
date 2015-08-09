@@ -157,27 +157,30 @@
       <div class="panel panel-default">
       <div class="panel-body">
         <div class="row space">
-
-          <div class="col-md-3">
-            <div class="col-xs-2 col-sm-2 col-md-2">
-              <div class="voting">
-                <p>
+          <div class="col-md-12">
+             <div class="voting">
+                
                   <%= link_to like_link_path(similarity), method: :put do %>
                   <span class="thumbup"> up </span>
                   <%= similarity.get_upvotes.size %>
                   <% end %>
-                </p>
-                <p>
+                
+                
                   <%= link_to dislike_link_path(similarity), method: :put do %>
                   <span class="thumbdown"> wn </span>
                   <%= similarity.get_downvotes.size %>
                   <% end %>
-                </p>
+                
               </div>
-            </div>
-            <div class="col-md-10">
+          </div>
+
+          <div class="col-md-3">
+            
+             
+            
+            
               <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
-            </div>
+            
           </div>
 
           <div class="col-md-9">   
