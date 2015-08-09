@@ -96,7 +96,7 @@
 
       </td>
     </tr>
-    
+
   </tbody>
   <% end %>
   <% else %>
@@ -140,7 +140,7 @@
       <%= link_to "Add Similar Movie", new_movie_similarity_path(@movie), class: "btn btn-success space" %>
     </div>
     <% end %>
-    
+
 
     <div class="col-md-12">
       <% if @similarities.blank? %>
@@ -149,14 +149,15 @@
       <% else %>
       <h4 class="text-primary"> Similar Movies </h4>
       <% end %>
-      
+
     </div>
 
     <div class="col-md-12">
       <% @similarities.each do |similarity| %>
       <div class="panel panel-default">
+      <div class="container">
         <div class="row space">
-         
+
           <div class="col-md-3">
             <div class="col-md-2">
               <div class="voting">
@@ -201,6 +202,7 @@
 
             </p>
           </div>
+        </div>
         </div>
       </div>
       <% end %>
