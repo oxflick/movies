@@ -80,16 +80,16 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { :host => 'funkyflick.herokuapp.com' }
-config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-address: "smtp.gmail.com",
-port: 587,
-domain: 'gmail.com',
-authentication: "plain",
-enable_starttls_auto: true,
-user_name: ENV["GMAIL_USERNAME"],
-password: ENV["GMAIL_PASSWORD"]
-}
  
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'funkyflick.herokuapp.com', #eg: 'yourappname.herokuapp.com'
+    :authentication => :plain,
+  }
 end
