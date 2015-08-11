@@ -92,4 +92,6 @@ config.action_mailer.delivery_method = :smtp
     :domain         => 'funkyflick.herokuapp.com', #eg: 'yourappname.herokuapp.com'
     :authentication => :plain,
   }
+
+  
 end
