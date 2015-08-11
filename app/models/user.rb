@@ -8,5 +8,12 @@ class User < ActiveRecord::Base
   has_many :similarities, dependent: :destroy
 
 
-  validates :first_name, :last_name, presence: true       
+  validates :first_name, :last_name, presence: true     
+
+  after_create :send_admin_mail
+  
+  def send_admin_mail
+    NotificationsMailer.send_new_user_message(self).deliver
+  end  
+
 end
