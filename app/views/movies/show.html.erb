@@ -2,12 +2,17 @@
 <div class="row">
   <div class="col-md-3">
 
-    <div class="img-thumbnail img-responsive">
+    <div class="movieimage img-thumbnail img-responsive">
       <%= image_tag(@movie.picture_url) if @movie.picture.present? %>
-    </div>
-
-
     
+
+    <!-- Button trigger modal to watch  trailer -->
+    <div class="blocktrailer">
+      <button type="button" class="playtrailer" data-trailer-youtube-id="<%= @movie.url %>" data-toggle="modal" data-target="#trailer">
+      
+      </button>
+    </div>
+    </div>
   </div>
   
   <div class="col-md-9">
@@ -27,7 +32,7 @@
     </p>
     
     <div class="star-rating" data-score= <%= @avg_rating %> ></div>
-    <p> <%= "#{@reviews.length} reviews" %> </p>
+    <p> <%= "#{@reviews.length} ratings" %> </p>
 
 
 
@@ -47,7 +52,31 @@
       <%= @movie.genre %>
     </p>
 
-    <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-primary" %>
+
+    
+
+<!-- Modal -->
+<div class="modal" id="trailer">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+          <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+      </a>
+      <div class="scale-media" id="trailer-video-container">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+
+
+    <%= link_to "Rate a Movie", new_movie_review_path(@movie), class: "btn btn-primary" %>
 
     <br>
     <%= link_to 'Back', movies_path, class: "btn btn-link" %>
@@ -59,7 +88,7 @@
 
 
     <% if @reviews.blank? %>
-    <p class="text-warning"> No reviews yet. Be the first one to write one! </p>
+    <p class="text-warning"> No ratings yet. Be the first one to rate one! </p>
     <% else %>
     <table class="table">
       <thead>
@@ -216,7 +245,6 @@
 
 
 
-
 <script type="text/javascript">
  $('.star-rating').raty({
   path: 'https://s3.amazonaws.com/funkyflick1/stars',
@@ -226,3 +254,27 @@
  }
 });
 </script>   
+
+
+
+<script type="text/javascript" charset="utf-8">
+  // Pause the video when the modal is closed
+  $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+  // Remove the src so the player itself gets removed, as this is the only
+  // reliable way to ensure the video stops playing in IE
+  $("#trailer-video-container").empty();
+  });
+  // Start playing the video whenever the trailer modal is opened
+  $(document).on('click', '.playtrailer', function (event) {
+  var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+  //var trailerYouTubeId = $('.movietrailer').val()
+  var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1';
+  $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+  'id': 'trailer-video',
+  'type': 'text-html',
+  'src': sourceUrl,
+  'frameborder': 0
+  }));
+  });
+  
+</script>
