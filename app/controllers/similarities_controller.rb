@@ -69,6 +69,6 @@ class SimilaritiesController < ApplicationController
     end 
 
     def similarity_params
-      params.require(:similarity).permit(:image, :name, :actor, :why)
+      params.require(:similarity).permit(:image, :name, :actor, :why, :url)
     end
 end
