@@ -268,7 +268,7 @@
   $(document).on('click', '.playtrailer', function (event) {
   var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
   //var trailerYouTubeId = $('.movietrailer').val()
-  var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1';
+  var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
   $("#trailer-video-container").empty().append($("<iframe></iframe>", {
   'id': 'trailer-video',
   'type': 'text-html',
