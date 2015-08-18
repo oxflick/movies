@@ -55,7 +55,7 @@
 
     
 
-<!-- Modal -->
+<!-- Modal for movie trailer -->
 <div class="modal" id="trailer">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -72,6 +72,8 @@
     </div>
   </div>
 </div>
+
+
     
 
 
@@ -207,9 +209,13 @@
             
              
             
-            
+            <div class="similarimage">
               <%= image_tag similarity.image_url, :width => '100', class: "img-thumbnail" if similarity.image.present? %>
-            
+              <div class="similarplaybutton">
+                  <button type="button" class="playsimilar" data-trailer-youtubei-id="<%= similarity.url %>" data-toggle="modal" data-target="#simtrailer">
+                  </button>
+              </div>
+            </div>
           </div>
 
           <div class="col-md-9">   
@@ -243,6 +249,24 @@
   </div>
 </div>
 
+<!-- Modal for similar movie trailer -->
+<div class="modal" id="simtrailer">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+          <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+      </a>
+      <div class="scale-media" id="trailer-video-container1">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <script type="text/javascript">
@@ -273,6 +297,17 @@
   'id': 'trailer-video',
   'type': 'text-html',
   'src': sourceUrl,
+  'frameborder': 0
+  }));
+  });
+  $(document).on('click', '.playsimilar', function (event) {
+  var trailerYouTubeId1 = $(this).attr('data-trailer-youtubei-id')
+  //var trailerYouTubeId = $('.movietrailer').val()
+  var sourceUrl1 = 'http://www.youtube.com/embed/' + trailerYouTubeId1 + '?autoplay=1&html5=1';
+  $("#trailer-video-container1").empty().append($("<iframe></iframe>", {
+  'id': 'trailer-video',
+  'type': 'text-html',
+  'src': sourceUrl1,
   'frameborder': 0
   }));
   });
