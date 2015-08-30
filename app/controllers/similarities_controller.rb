@@ -8,12 +8,18 @@ class SimilaritiesController < ApplicationController
   def upvote
     @similarity = Similarity.find(params[:id])
     @similarity.upvote_by current_user
+    if @similarity.upvote_by current_user
+      NotificationsMailer.send_new_vote_to_admin(@similarity).deliver
+    end  
     redirect_to :back
   end
 
   def downvote
     @similarity = Similarity.find(params[:id])
     @similarity.downvote_by current_user
+    if @similarity.downvote_by current_user
+      NotificationsMailer.send_new_vote_to_admin(@similarity).deliver
+    end  
     redirect_to :back
   end
 

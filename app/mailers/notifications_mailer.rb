@@ -13,4 +13,9 @@ class NotificationsMailer < ActionMailer::Base
     mail(:to => 'flick@funkyflick.com', :subject => "New review has been created.")
   end
 
+  def send_new_vote_to_admin(similarity)
+    @similarity = similarity
+    mail(:to => 'flick@funkyflick.com', :subject => "Someone voted or downvoted")
+  end
+
 end
