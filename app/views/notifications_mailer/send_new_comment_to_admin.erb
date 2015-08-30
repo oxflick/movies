@@ -1,4 +1,5 @@
 <p>Dear Admin</p>
 
-<p> User has created a comment to a movie. </p>
+<p> User with email <%= @review.user.email %> has created a comment to a movie <%= link_to 'movie', movie_url(@review.movie) %> </p>
 
+<p> Need your approval. </p>
