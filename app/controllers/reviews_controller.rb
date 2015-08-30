@@ -21,8 +21,9 @@ class ReviewsController < ApplicationController
     @review.movie_id = @movie.id
     
     flash[:notice] = "Review was successfully created. It will be published after approval." if @review.save
+    NotificationsMailer.send_new_comment_to_admin(@review).deliver
     respond_with(@review, :location => movie_path(@movie))
-
+       
   end
 
   def update
