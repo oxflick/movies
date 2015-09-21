@@ -4,92 +4,88 @@ html {
 }
 
 body {
-background-color: #F5F5F1;
-color: #333333;
-font-family: Arial, Helvetica, sans-serif;
-margin: 0 0 180px;
+    background-color: #F5F5F1;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 180px;
 }
-
 
 .jumbotron {
-
-background-color: #FFF;
-border: 1px solid #999999;
-text-align: center;
-h2 {
-color: #401739;
-font-weight: bold;
-margin-top: -10px;
-}
-p {
-color: #D14617;
-font-size: 14px;
-font-weight: bold;
-}
+    background-color: #FFF;
+    border: 1px solid #999999;
+    text-align: center;
+    h2 {
+        color: #401739;
+        font-weight: bold;
+        margin-top: -10px;
+    }
+    p {
+        color: #D14617;
+        font-size: 14px;
+        font-weight: bold;
+    }
 }
 
 /*-- Here is another option for the logo.
 .navbar-default {
-.container-fluid {
-background-color: #504357;
-.navbar-nav > li > a {
-color: #ffffff;
-font-size: 16px;
-font-weight: bold;
-}
-.navbar-brand {
-color: #FC1B04;
-font-size: 32px;
-font-weight: bold;
-font-family: 'Shadows Into Light', cursive;
-text-shadow: 2px 0 0 #FFFCEB, -2px 0 0 #FFFCEB, 0 2px 0 #FFFCEB, 0 -2px 0 #FFFCEB, 1px 1px #FFFCEB, -1px -1px 0 #FFFCEB, 1px -1px 0 #FFFCEB, -1px 1px 0 #ED7621;
+    .container-fluid {
+         background-color: #504357;
+    .navbar-nav > li > a {
+         color: #ffffff;
+         font-size: 16px;
+         font-weight: bold;
+    }
+    .navbar-brand {
+         color: #FC1B04;
+         font-size: 32px;
+         font-weight: bold;
+         font-family: 'Shadows Into Light', cursive;
+         text-shadow: 2px 0 0 #FFFCEB, -2px 0 0 #FFFCEB, 0 2px 0 #FFFCEB, 0 -2px 0 #FFFCEB, 1px 1px #FFFCEB, -1px -1px 0 #FFFCEB, 1px -1px 0 #FFFCEB, -1px 1px 0 #ED7621;
 
-}
-}
+    }
+    }
 } --*/
 
 .navbar-default {
-.container-fluid {
-background-color: #EFEFEB;
-.navbar-nav > li > a {
-color: #504357;
-font-size: 15px;
-font-weight: bold;
-}
-}
+    .container-fluid {
+        background-color: #EFEFEB;
+        .navbar-nav > li > a {
+            color: #504357;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    }
 }
 
 .container-fluid {
-padding: 10px 120px;
+    padding: 10px 120px;
 }
 
 .logohead {
-width: 170px;
-margin-top: -17px;
+    width: 170px;
+    margin-top: -17px;
 }
 
 .center {
-text-align: center;
+    text-align: center;
 }
 
 .thumbnail > a > img {
-
-max-height: 250px;
+    max-height: 250px;
 }
 
 .caption {
-a {
-color: #6F256F;
-}
-h4 {
-font-size: 13px;
-text-transform: uppercase;
-font-weight: bold;
-display: block;
-height: 50px;
-overflow: hidden;
-
-}
+    a {
+        color: #6F256F;
+    }
+    h4 {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        height: 50px;
+        overflow: hidden;
+    }
 }
 
 footer {
@@ -103,13 +99,12 @@ footer {
 	clear: both;
 	color: #FFFFFF;
 	font-weight: bold;
-
-
 }
 
 footer .social {
 	margin-top: 20px;
 }
+
 footer p {
 	margin-top: 20px;
 }
@@ -123,8 +118,7 @@ footer .footer-links a {
 }
 
 footer .footer-links a:hover {
-	color: #F9A334;
-	
+	color: #F9A334;	
 }
 
 .footer-links {
@@ -141,6 +135,12 @@ footer .footer-links a:hover {
 	font-size: 24px;
 	color: #9e1f63;
 	padding-bottom: 15px;
+	font-weight: bold;
+}
+
+.commentrating {
+	font-size: 20px;
+	color: #9e1f63;
 	font-weight: bold;
 }
 

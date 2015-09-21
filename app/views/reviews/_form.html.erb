@@ -18,7 +18,7 @@
     <%= f.text_area :comment, class: "form-control"  %>
   </div>
   <div class="form-group"> <br>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
   </div>
 <% end %>
 
