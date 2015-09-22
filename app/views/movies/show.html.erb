@@ -88,7 +88,7 @@
 
 
     
-</div>
+  </div>
 </div>
 <div class="container">
   <div class="row">
@@ -104,7 +104,7 @@
       <h4 class="text-primary"> No Similar Movies yet. Check later! </h4>
 
       <% else %>
-      <h4 class="text-primary"> Similar Movies </h4>
+      <h4 class="commentrating"> Similar Movies </h4>
       <% end %>
 
     </div>
@@ -171,8 +171,9 @@
     </div>
     <% end %>
   </div>
+  
   <div class="col-md-12">
-<% if @reviews.blank? %>
+    <% if @reviews.blank? %>
     <p class="text-warning"> No ratings yet. Be the first one to rate this page! </p>
     <% else %>
     <table class="table">
